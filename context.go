@@ -6,9 +6,9 @@ import (
 )
 
 // ctx, cancel, err := context.WithDeadline(tkinfo.WaitingSeatTimeoutDuration)
-func WithDeadline(dstring string) (context.Context, context.CancelFunc, error) {
+func WithDeadline(durationString string) (context.Context, context.CancelFunc, error) {
 	var duration time.Duration
-	duration, err := time.ParseDuration(dstring)
+	duration, err := time.ParseDuration(durationString)
 	if err != nil {
 		return nil, nil, err
 	}
